@@ -4,6 +4,12 @@ from Calculator.Calculator import Calculator
 from Statistics.Statistics import Statistics
 from pprint import pprint
 
+class MyTestCase(unittest.TestCase):
+    def setUp(self) -> None:
+        self.calculator = Calculator()
+
+    def test_instantiate_calculator(self):
+        self.assertIsInstance(self.calculator, Calculator)
 
     def test_mean_statistics(self):
         for row in self.test_answer:
