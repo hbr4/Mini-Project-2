@@ -1,7 +1,4 @@
-from Calculator.Square import squaring
-from Calculator.Division import division
-from Calculator.Addition import addition
-from Calculator.Subtraction import subtraction
+
 from Statistics.PopMean import populationmean
 from Statistics.StandardDeviation import stddev
 
