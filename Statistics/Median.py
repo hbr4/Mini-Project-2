@@ -13,8 +13,7 @@ def median(num):
         median = division(addition(median1, median2),2)
 
     else:
-        median = num1[n//2]
-
+        median = num1[values//2]
 
     return median
 
