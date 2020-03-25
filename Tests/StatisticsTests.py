@@ -6,8 +6,8 @@ from pprint import pprint
 
 class MyTestCase(unittest.TestCase):
     test_case = CsvReader('Tests/CSVFiles/TestCaseData.csv').data
-    column1 = [int(row['value1']) for row in test_data]
-    column2 = [int(row['value2']) for row in test_data]
+    column1 = [int(row['value1']) for row in test_case]
+    column2 = [int(row['value2']) for row in test_case]
     z_ans = CsvReader('Tests/CSVFiles/ZScores.cdv').data
     test_answer = CsvReader('Tests/CSVFiles/TestAnswers.csv').data
 
