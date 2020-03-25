@@ -5,8 +5,15 @@ from Statistics.Statistics import Statistics
 from pprint import pprint
 
 class MyTestCase(unittest.TestCase):
+    test_case = CsvReader('Tests/CSVFiles/TestCaseData.csv').data
+    column1 = [int(row['value1']) for row in test_data]
+    column2 = [int(row['value2']) for row in test_data]
+    z_ans = CsvReader('Tests/CSVFiles/ZScores.cdv').data
+    test_answer = CsvReader('Tests/CSVFiles/TestAnswers.csv').data
+
+
     def setUp(self) -> None:
-        self.calculator = Calculator()
+        self.Calculator = Calculator()
 
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.calculator, Calculator)
@@ -14,7 +21,7 @@ class MyTestCase(unittest.TestCase):
     def test_mean_statistics(self):
         for row in self.test_answer:
             pprint(row["mean"])
-        self.assertEqual(self.statistics.population_mean(self.column1), float(row['mean']))
+        self.assertEqual(self.statistics.mean(self.column1), float(row['mean']))
         self.assertEqual(self.statistics.result, float(row['mean']))
 
     def test_median_statistics(self):
@@ -56,11 +63,8 @@ class MyTestCase(unittest.TestCase):
 
     def test_confidence_interval(self):
         for row in self.test_answer:
-            pprint(row['ci_top'])
-            pprint(row['ci_bottom'])
-        self.assertEqual(self.statistics.confidence_interval_top(self.column1), float(row['ci_top']))
-        self.assertEqual(self.statistics.confidence_interval_bottom(self.column1), float(row['ci_bottom']))
-
+            pprint(row['confidence'])
+        self.assertEqual(self.statistics.confidence_interval(self.column1), float(row['confidence']))
 
 
 if __name__ == '__main__':
