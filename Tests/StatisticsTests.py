@@ -13,10 +13,10 @@ class MyTestCase(unittest.TestCase):
 
 
     def setUp(self) -> None:
-        self.Calculator = Calculator()
+        self.statistics = Statistics()
 
     def test_instantiate_calculator(self):
-        self.assertIsInstance(self.calculator, Calculator)
+        self.assertIsInstance(self.statistics, Statistics)
 
     def test_mean_statistics(self):
         for row in self.test_answer:
