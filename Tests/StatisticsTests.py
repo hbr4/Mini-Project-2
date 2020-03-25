@@ -8,7 +8,8 @@ class MyTestCase(unittest.TestCase):
     test_case = CsvReader('Tests/CSVFiles/TestCaseData.csv').data
     column1 = [int(row['value1']) for row in test_case]
     column2 = [int(row['value2']) for row in test_case]
-    z_ans = CsvReader('Tests/CSVFiles/ZScores.cdv').data
+    zscore_ans = CsvReader('Tests/CSVFiles/ZScores.cdv').data
+    zdata = [float(row['zscore']) for row in zscore_ans]
     test_answer = CsvReader('Tests/CSVFiles/TestAnswers.csv').data
 
 
@@ -45,26 +46,26 @@ class MyTestCase(unittest.TestCase):
     def test_variance_statistics(self):
         for row in self.test_answer:
             pprint(row['variance'])
-        self.assertEqual(self.statistics.population_proportion_variance(self.column1), float(row['variance']))
+        self.assertEqual(self.statistics.variance(self.column1), float(row['variance']))
         self.assertEqual(self.statistics.result, float(row['variance']))
 
 
     def test_correlation_statistics(self):
         for row in self.test_answer:
             pprint(row['correlation'])
-        self.assertEqual(self.statistics.correlation_coefficient(self.column1, self.column2),
+        self.assertEqual(self.statistics.correlation(self.column1, self.column2),
                          float(row['correlation']))
         self.assertEqual(self.statistics.result, float(row['correlation']))
 
     def test_zscore_statistics(self):
-        self.assertEqual(self.statistics.zscore(self.column1), self.column_zscore)
-        self.assertEqual(self.statistics.result, self.column_zscore)
+        self.assertEqual(self.statistics.zscore(self.column1), self.zdata)
+        self.assertEqual(self.statistics.result, self.zdata)
 
 
     def test_confidence_interval(self):
         for row in self.test_answer:
             pprint(row['confidence'])
-        self.assertEqual(self.statistics.confidence_interval(self.column1), float(row['confidence']))
+        self.assertEqual(self.statistics.confidence(self.column1), float(row['confidence']))
 
 
 if __name__ == '__main__':
