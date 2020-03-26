@@ -2,7 +2,7 @@ from Statistics.Mean import mean
 from Statistics.Median import median
 from Statistics.StandardDeviation import stddev
 
-def skew(num):
+def skewness(num):
     mean_num = mean(num)
     median_num = median(num)
     stddev_num = stddev(num)
