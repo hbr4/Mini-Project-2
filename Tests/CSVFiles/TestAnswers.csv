@@ -1,2 +1,2 @@
-mean,median,mode,stddev,variance,correlation,confidence
-50.31578947,53,61,25.56941559,653.7950139,0.240160973,11.4972
+mean,median,mode,stddev,variance,correlation,confidence,quartile1,quartile2,skewness
+50.31578947,53,61,25.56941559,653.7950139,0.240160973,11.4972,26,73,0.211053037
