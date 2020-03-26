@@ -1,4 +1,6 @@
 from Calculator.Calculator import Calculator
+from Statistics.Confidence_low import confidence_low
+from Statistics.Confidence_up import confidence_up
 from Statistics.Mean import mean
 from Statistics.Median import median
 from Statistics.Mode import mode
@@ -6,6 +8,8 @@ from Statistics.StandardDeviation import stddev
 from Statistics.Variance import variance
 from Statistics.ZScore import zscore
 from Statistics.Correlation import correlation
+from Statistics.Quartiles import quartiles
+from Statistics.Skewness import skewness
 
 
 class Statistics(Calculator):
@@ -42,5 +46,20 @@ class Statistics(Calculator):
         self.result = correlation(data, data1)
         return self.result
 
+    def quartiles(self, data):
+        self.result = quartiles(data)
+        return self.result
+
+    def skewness(self,data):
+        self.result = skewness(data)
+        return self.result
+
+    def confidence_up(self,data):
+        self.result = confidence_up(data)
+        return self.result
+
+    def confidence_low(self,data):
+        self.result = confidence_low(data)
+        return self.result
 
     pass
