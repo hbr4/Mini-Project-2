@@ -7,4 +7,5 @@ def correlation(data, data1):
     z1 = zscore(data1)
     ztot = list(map(lambda x, y: x * y, z, z1))
     corr = division(sum(ztot), len(ztot))
-    return corr
+
+    return round(corr, 4)
