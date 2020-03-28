@@ -11,7 +11,7 @@ class MyTestCase(unittest.TestCase):
     def test_results_property_calculator(self):
         self.assertEqual(self.calculator.result, 0)
 
-    def test_add_method_calculator(self):
+    def test_add_calculator(self):
         self.assertEqual(self.calculator.add(2, 2), 4)
         self.assertEqual(self.calculator.result, 4)
         test_data = CsvReader('Tests/CSVFiles/Addition.csv').data
@@ -20,7 +20,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.add(row['Value 2'], row['Value 1']), result)
             self.assertEqual(self.calculator.result, result)
 
-    def test_subtract_method_calculator(self):
+    def test_subtract_calculator(self):
         self.assertEqual(self.calculator.subtract(2, 2), 0)
         self.assertEqual(self.calculator.result, 0)
         test_data = CsvReader('Tests/CSVFiles/Subtraction.csv').data
@@ -29,7 +29,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.subtract(row['Value 2'], row['Value 1']), result)
             self.assertEqual(self.calculator.result, result)
 
-    def test_multiply_method_calculator(self):
+    def test_multiply_calculator(self):
         self.assertEqual(self.calculator.multiply(2, 2), 4)
         self.assertEqual(self.calculator.result, 4)
         test_data = CsvReader('Tests/CSVFiles/Multiplication.csv').data
@@ -38,7 +38,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.multiply(row['Value 2'], row['Value 1']), result)
             self.assertEqual(self.calculator.result, result)
 
-    def test_divide_method_calculator(self):
+    def test_divide_calculator(self):
         self.assertEqual(self.calculator.divide(2, 2), 1)
         self.assertEqual(self.calculator.result, 1)
         test_data = CsvReader('Tests/CSVFiles/Division.csv').data
@@ -47,7 +47,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.divide(row['Value 2'], row['Value 1']), result)
             self.assertEqual(self.calculator.result, result)
 
-    def test_square_method_calculator(self):
+    def test_square_calculator(self):
         self.assertEqual(self.calculator.square(2), 4)
         self.assertEqual(self.calculator.result, 4)
         test_data = CsvReader('Tests/CSVFiles/Square.csv').data
@@ -56,7 +56,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.square(row['Value 1']), result)
             self.assertEqual(self.calculator.result, result)
 
-    def test_square_root_method_calculator(self):
+    def test_square_method_calculator(self):
         self.assertEqual(self.calculator.squareroot(4), 2)
         self.assertEqual(self.calculator.result, 2)
         test_data = CsvReader('Tests/CSVFiles/SquareRoot.csv').data
