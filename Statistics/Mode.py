@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 def mode(num):
     values = len(num)
     data = Counter(num)
