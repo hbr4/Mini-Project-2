@@ -5,6 +5,7 @@ from Calculator.Square import squaring
 from Calculator.SquareRoot import squarerooting
 from Calculator.Subtraction import subtraction
 
+
 class Calculator:
     result = 0
 
@@ -31,6 +32,6 @@ class Calculator:
         self.result = squaring(a)
         return self.result
 
-    def squareroot(self,a):
+    def squareroot(self, a):
         self.result = squarerooting(a)
         return self.result
