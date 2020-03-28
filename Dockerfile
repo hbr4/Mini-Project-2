@@ -2,7 +2,6 @@ FROM python:3.7
 
 ADD . .
 
-RUN pip install coverage
+RUN pip install --upgrade pip
 
-CMD ["python", "Tests"]
-
+CMD ["python", "-m", "unittest", "discover", "-s","Tests"]
