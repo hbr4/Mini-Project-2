@@ -1,2 +1,2 @@
 def squaring(a):
-        return float(a)**2
+    return float(a)**2
