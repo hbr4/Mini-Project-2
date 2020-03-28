@@ -4,6 +4,7 @@ from Calculator.Calculator import Calculator
 from Statistics.Statistics import Statistics
 from pprint import pprint
 
+
 class MyTestCase(unittest.TestCase):
     test_case = CsvReader('Tests/CSVFiles/TestCaseData.csv').data
     column1 = [int(row['value1']) for row in test_case]
@@ -11,7 +12,6 @@ class MyTestCase(unittest.TestCase):
     zscore_ans = CsvReader('Tests/CSVFiles/ZScores.cdv').data
     zdata = [float(row['zscore']) for row in zscore_ans]
     test_answer = CsvReader('Tests/CSVFiles/TestAnswers.csv').data
-
 
     def setUp(self) -> None:
         self.statistics = Statistics()
@@ -49,7 +49,6 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.statistics.variance(self.column1), float(row['variance']))
         self.assertEqual(self.statistics.result, float(row['variance']))
 
-
     def test_correlation_statistics(self):
         for row in self.test_answer:
             pprint(row['correlation'])
@@ -60,7 +59,6 @@ class MyTestCase(unittest.TestCase):
     def test_zscore_statistics(self):
         self.assertEqual(self.statistics.zscore(self.column1), self.zdata)
         self.assertEqual(self.statistics.result, self.zdata)
-
 
     def test_confidence_interval(self):
         for row in self.test_answer:
