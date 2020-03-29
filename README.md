@@ -4,7 +4,7 @@ Last Build Status on Master Branch : [![Build Status](https://travis-ci.com/hbr4
 
 For this project, **Kamal Bhagat** and **Hiren Rana** worked together to create a statistical calculator. 
 
-A list of various tasks to break down development work is listed under **project's board** [here]([https://github.com/hbr4/Mini-Project-2/projects/1](https://github.com/hbr4/Mini-Project-2/projects/1)).
+A list of various tasks to break down development work is listed under **project's board** [here]([https://github.com/hbr4/Mini-Project-2/projects/1](https://github.com/hbr4/Mini-Project-2/projects/1))
 
 Following is the list of **Descriptive Stats Functions** added to this repo: 
 
